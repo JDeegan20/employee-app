@@ -1,11 +1,18 @@
 package ie.setu
 
+import mu.KotlinLogging
 import kotlin.math.round
 
 var employees = EmployeeAPI()
 
+val logger = KotlinLogging.logger {}
 fun main(args: Array<String>){
     start()
+    logger.info { "Launching Employee App" }
+    logger.info { "Getting Ready" }
+    logger.info { "Almost There" }
+    logger.info { "Done! You're Employee App is launched" }
+
 }
 
 fun roundTwoDecimals(number: Double) = round(number * 100) / 100
@@ -68,6 +75,7 @@ fun list(){
 }
 
 fun search() {
+    logger.info { "Searching......." }
     val employee = getEmployeeById()
     if (employee == null)
         println("No employee found")
