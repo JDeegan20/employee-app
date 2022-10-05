@@ -1,9 +1,10 @@
 package ie.setu
 
+import ie.setu.models.Employee
 import mu.KotlinLogging
 import kotlin.math.round
 
-var employees = EmployeeAPI()
+var employees = controllers.EmployeeAPI()
 
 val logger = KotlinLogging.logger {}
 fun main(args: Array<String>){
