@@ -25,4 +25,10 @@ class EmployeeAPI {
         employees.add(employee)
     }
 
+    //delete employee
+    fun deleteEmployee(empId: Int){
+        employees.remove(findOne(empId))
+    }
+
+
 }

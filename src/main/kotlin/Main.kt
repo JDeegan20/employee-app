@@ -45,6 +45,7 @@ print("""
          |   2. List All Employees
          |   3. Search Employees
          |   4. Print Payslip for Employee
+         |   5. Delete Employee
          |  -1. Exit
          |
          |Enter Option : """.trimMargin())
@@ -62,6 +63,7 @@ fun start() {
             2 -> list()
             3 -> search()
             4 -> paySlip()
+            5 -> deleteEmployee()
             -99 -> dummyData()
             -1 -> println("Exiting App")
             else -> println("Invalid Option")
@@ -98,6 +100,15 @@ fun paySlip(){
 
 fun dummyData() {
     employees.create(Employee("Joe", "Soap", 'm', 0, 35655.43, 31.0, 7.5, 2000.0, 25.6))
-    employees.create(Employee("Joan", "Murphy", 'f', 0, 54255.13, 32.5, 7.0, 1500.0, 55.3))
-    employees.create(Employee("Mary", "Quinn", 'f', 0, 75685.41, 40.0, 8.5, 4500.0, 0.0))
+    employees.create(Employee("Joan", "Murphy", 'f', 1, 54255.13, 32.5, 7.0, 1500.0, 55.3))
+    employees.create(Employee("Mary", "Quinn", 'f', 2, 75685.41, 40.0, 8.5, 4500.0, 0.0))
+}
+
+fun deleteEmployee(){
+    logger.info {"Deleting the Employee"}
+    println(list())
+    println ("Enter the Employee ID")
+    val empId = readLine()!!.toInt()
+    employees.deleteEmployee(empId)
+    println(list())
 }
