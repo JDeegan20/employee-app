@@ -104,11 +104,16 @@ fun dummyData() {
     employees.create(Employee("Mary", "Quinn", 'f', 2, 75685.41, 40.0, 8.5, 4500.0, 0.0))
 }
 
+
+
 fun deleteEmployee(){
-    logger.info {"Deleting the Employee"}
+    logger.info {"Delete an Employee"}
     println(list())
     println ("Enter the Employee ID")
     val empId = readLine()!!.toInt()
     employees.deleteEmployee(empId)
     println(list())
 }
+
+
+
